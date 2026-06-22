@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      VĂN KIỆN ĐẠI HỘI ĐẠI BIỂU HỘI KHUYẾN HỌC XÃ SALOONG LẦN THỨ I, NHIỆM KỲ
+      2026 - 2031
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root{
+        --bg:#f5f7fb;
+        --text:#1f2937;
+        --muted:#6b7280;
+        --primary:#2563eb;
+        --card-bg:#ffffff;
+        --radius:12px;
+        --gap:16px;
+      }
+
+      /* Reset and base styles */
+      *,*::before,*::after{box-sizing:border-box}
+      html,body{height:100%}
+      body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,Helvetica, sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+
+      .container{width:92%;max-width:1100px;margin:0 auto}
+      header{padding:28px 0;text-align:center}
+      .logo{font-weight:700;color:var(--primary);font-size:20px}
+      .subtitle{color:var(--muted);font-size:14px}
+
+      /* Cards grid */
+      .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding-bottom:36px}
+      .card{background:var(--card-bg);border-radius:14px;padding:18px;box-shadow:0 8px 26px rgba(15,23,42,0.06);display:grid;grid-template-columns:48px 1fr;grid-template-rows:auto 1fr auto;grid-template-areas:"icon title" "desc desc" "buttons buttons";gap:12px;min-height:160px;transition:transform .18s ease,box-shadow .18s ease}
+      .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,23,42,0.12)}
+      /* icon + title inline on one row (grid areas) */
+      .card .icon{grid-area:icon;width:48px;height:48px;border-radius:12px;background:#dbeafe;display:inline-flex;align-items:center;justify-content:center;font-size:20px;margin:0;flex-shrink:0}
+      .card .title{grid-area:title;font-size:16px;font-weight:700;margin:0;color:var(--text);align-self:center}
+      .card .desc{grid-area:desc;color:var(--muted);font-size:13px;margin-top:4px}
+      .card .meta{font-size:12px;color:#64748b;margin-top:6px}
+      /* ensure buttons sit in full-width row and have extra top margin */
+      .buttons{grid-area:buttons;margin-top:10px}
+      .btn{display:inline-block;padding:14px 16px;border-radius:10px;text-align:center;text-decoration:none;font-weight:700;font-size:14px;width:100%}
+      .btn-primary{background:linear-gradient(90deg,var(--primary),#1e40af);color:#fff;border:0}
+      @media(min-width:769px){
+        .card{grid-template-columns:56px 1fr;gap:14px;padding:20px}
+        .btn{padding:12px 14px;width:70%}
+      }
+
+      /* Modal - mobile-first */
+      .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);display:none;align-items:center;justify-content:center;padding:12px;z-index:9999}
+      .modal{width:100%;max-width:980px;background:var(--card-bg);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;max-height:calc(100vh - 24px)}
+      .modal-header{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid #f1f5f9;background:linear-gradient(90deg,#fbfbfd,#ffffff)}
+      .modal-title{font-weight:700;font-size:14px}
+      .modal-actions{display:flex;gap:8px;align-items:center}
+      .btn-outline{display:inline-block;padding:8px 10px;border-radius:8px;border:1px solid var(--primary);color:var(--primary);background:transparent;font-weight:600;text-decoration:none}
+      .btn-outline:hover{background:rgba(37,99,235,0.06)}
+      .modal-close{background:transparent;border:0;font-size:18px;cursor:pointer;padding:6px}
+      .modal-body{flex:1;overflow:auto;-webkit-overflow-scrolling:touch}
+      .modal-body iframe{width:100%;height:100%;min-height:60vh;border:0;display:block}
+
+      footer{padding:18px;text-align:center;color:var(--muted);font-size:13px}
+
+      @media(min-width:769px){
+        .logo{font-size:28px}
+        header{padding:48px 0 28px}
+        .modal{height:80vh;border-radius:12px}
+      }
+    </style>
+    <header class="container">
+      <div class="logo">
+        VĂN KIỆN ĐẠI HỘI ĐẠI BIỂU HỘI KHUYẾN HỌC XÃ SALOONG LẦN THỨ I, NHIỆM KỲ
+        2026 - 2031
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <!-- CARD 1 -->
+        <div class="card">
+          <div class="icon">📄</div>
+
+          <div class="title">Đề án nhân sự BCH khuyến học</div>
+
+          <div class="buttons">
+            <a href="Docs/05. Đề án nhân sự BCH khuyến học  ng.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+
+        <!-- NEW CARD 2 -->
+        <div class="card">
+          <div class="icon">📄</div>
+
+          <div class="title">Nội quy, quy chế ĐH HKH</div>
+
+          <div class="buttons">
+            <a href="Docs/01. Nội quy, quy chế ĐH HKH.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+
+        <!-- COPY THÊM -->
+        <!-- 3 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <div class="title">BÁO CÁO THẨM TRA TƯ CÁCH ĐẠI BIỂU</div>
+
+          <div class="buttons">
+            <a href="Docs/4. BAO CAO THAM TRA TU CACH DAI BIEU.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <div class="title">BÁO CÁO KIỂM ĐIỂM BCH NHIỆM KỲ 2020-2025</div>
+
+          <div class="buttons">
+            <a href="Docs/Bao cáo kiểm điểm BCH nhiệm kỳ 2020-2025 (1).pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <div class="title">BÁO CÁO BAN KIỂM TRA HỘI KHUYẾN HỌC</div>
+
+          <div class="buttons">
+            <a href="Docs/BÁO CÁO BAN KIỂM TRA HỘI KHUYẾN HỌC.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <div class="title">Báo cáo tài chính nhiệm kỳ 2020-2025</div>
+
+          <div class="buttons">
+            <a href="Docs/báo cáo tài chính nhiệm kỳ 2020-2025.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <div class="title">
+            BÁO CÁO TỔNG KẾT NHIỆM KỲ 2020-2025, PHƯƠNG HƯỚNG, NHIỆM VỤ
+            2026-2031. chuẩn
+          </div>
+
+          <div class="buttons">
+            <a href="Docs/BÁO CÁO TỔNG KẾT NHIỆM KỲ 2020-2025, PHUONG HƯƠNG, NHIEM VỤ 2026-2031. chuẩn.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <div class="title">CHƯƠNG TRÌNH ĐẠI HỘI TRÙ BỊ</div>
+
+          <div class="buttons">
+            <a href="Docs/CHUONG TRINH ĐH TRU BI.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <div class="title">CHƯƠNG TRÌNH ĐẠI HỘI (CHÍNH THỨC)</div>
+
+          <div class="buttons">
+            <a href="Docs/CHƯƠNG TRÌNH ĐẠI HỘI (CHÍNH THỨC) (1).pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <div class="title">
+            DANH SÁCH TRÍCH NGANG BCH HỘI KHUYẾN HỌC NK 2026-2031
+          </div>
+
+          <div class="buttons">
+            <a href="Docs/Copy of DS trich ngang BCH HKH NK 2026-2031 (1)2_smallpdf.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <div class="title">Danh sách HS nghèo vượt khó</div>
+
+          <div class="buttons">
+            <a href="Docs/Danh sách HS nghèo vượt khó đề nghị tặng quà_27.5.2026.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <div class="title">NGHỊ QUYẾT ĐẠI HỘI KHUYẾN HỌC 2026-2031 sữa</div>
+
+          <div class="buttons">
+            <a href="Docs/NGHI QUYET DAI HOI KHUYEN HOC 2026-2031 sữa.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <div class="title">THAM LUẬN KHUYẾN HỌC NHÀ TRƯỜNG 2026</div>
+
+          <div class="buttons">
+            <a href="Docs/THAM LUAN khuyen hoc  Nhà trường 2026.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="card">
+          <div class="icon">📄</div>
+          <div class="title">THAM LUẬN THÔN 2</div>
+
+          <div class="buttons">
+            <a href="Docs/tham luận thôn 2.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-external="true">Xem</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal preview -->
+    <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <div class="modal-body">
+          <iframe id="modalFrame" src="" title="Preview"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <footer>© 2026 - Tài Liệu</footer>
+
+    <script>
+      (function () {
+        const overlay = document.getElementById("modalOverlay");
+        const closeBtn = document.getElementById("modalClose");
+        const modalBody = document.querySelector(".modal-body");
+
+        function openModal(path) {
+          const titleEl = document.getElementById("modalTitle");
+          const filename = path.split("/").pop();
+          titleEl.textContent = filename || "Xem tài liệu";
+
+          modalBody.innerHTML =
+            '<iframe id="modalFrame" src="" title="Preview" allowfullscreen></iframe>';
+          const iframe = document.getElementById("modalFrame");
+          // Append PDF viewer hint to fit width on mobile if supported by the viewer
+          const separator = path.indexOf("#") === -1 ? "#" : "&";
+          iframe.src = encodeURI(path) + separator + "zoom=page-width";
+
+          // Configure external-open action: open file in new tab (helps mobile viewers show all pages)
+          const openExternal = document.getElementById('openExternal');
+          if(openExternal){
+            openExternal.href = encodeURI(path);
+            openExternal.onclick = function(e){
+              e.preventDefault();
+              try { window.open(encodeURI(path), '_blank', 'noopener'); }
+              catch(err){ location.href = encodeURI(path); }
+            };
+          }
+
+          // Prevent background page from scrolling while modal open.
+          // Use position:fixed on small screens to avoid blocking touch inside iframe.
+          if (window.innerWidth <= 768) {
+            const scrollY =
+              window.scrollY || document.documentElement.scrollTop;
+            document.body.dataset.scrollY = String(scrollY);
+            document.body.style.position = "fixed";
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.left = "0";
+            document.body.style.right = "0";
+          } else {
+            document.body.style.overflow = "hidden";
+          }
+
+          overlay.style.display = "flex";
+          overlay.setAttribute("aria-hidden", "false");
+        }
+
+        function closeModal() {
+          overlay.style.display = "none";
+          overlay.setAttribute("aria-hidden", "true");
+          // Restore background scroll and previous position
+          if (document.body.style.position === "fixed") {
+            const prev =
+              parseInt(document.body.dataset.scrollY || "0", 10) || 0;
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.left = "";
+            document.body.style.right = "";
+            delete document.body.dataset.scrollY;
+            window.scrollTo(0, prev);
+          } else {
+            document.body.style.overflow = "";
+          }
+          const iframe = document.getElementById("modalFrame");
+          if (iframe) iframe.src = "";
+          modalBody.innerHTML =
+            '<iframe id="modalFrame" src="" title="Preview"></iframe>';
+        }
+
+        // Only attach modal openers to buttons that still explicitly provide data-file
+        document.querySelectorAll('.btn.btn-primary[data-file]:not([data-external])').forEach((btn) => {
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const path = btn.getAttribute('data-file');
+            if (!path) {
+              alert('Không có tệp được chỉ định cho mục này.');
+              return;
+            }
+            openModal(path);
+          });
+        });
+
+        closeBtn.addEventListener("click", closeModal);
+        overlay.addEventListener("click", function (e) {
+          if (e.target === overlay) closeModal();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeModal();
+        });
+      })();
+    </script>
+  </body>
+</html>
